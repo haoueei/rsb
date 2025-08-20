@@ -7,7 +7,7 @@ color-scheme: light #  或者 dark。 改变页面背景色
 # 使用 custom-css 更灵活。
 #
 light:
-  color-text: "#1d2129"
+  color-text: "#535D60"
   color-background: "#2A9ADA"
   color-link: "#2a7ae2"
 #
