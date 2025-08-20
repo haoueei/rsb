@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/favicon.ico" />
+    <!-- Preload is necessary because we show these images when we disconnect from the server,
+    but at that point we cannot load these images from the server -->
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/gradient-yHQUC_QB.png" as="image" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/noise-60BoTA8O.png" as="image" />
+    <!-- Preload the fonts -->
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/Lora-VariableFont_wght-B2ootaw-.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/PTSans-Regular-CxL0S8W7.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/PTSans-Bold-D9fedIX3.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/FiraMono-Regular-BTCkDNvf.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/FiraMono-Medium-DU3aDxX5.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/FiraMono-Bold-CLVRCuM9.ttf" as="font" crossorigin="anonymous" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="a marimo app" />
+    <link rel="apple-touch-icon" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/apple-touch-icon.png" />
+    <link rel="manifest" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/manifest.json" />
+
+    <script data-marimo="true">
+      function __resizeIframe(obj) {
+        var scrollbarHeight = 20; // Max between windows, mac, and linux
+
+        function setHeight() {
+          var element = obj.contentWindow.document.documentElement;
+          // If there is no vertical scrollbar, we don't need to resize the iframe
+          if (element.scrollHeight === element.clientHeight) {
+            return;
+          }
+
+          // Create a new height that includes the scrollbar height if it's visible
+          var hasHorizontalScrollbar = element.scrollWidth > element.clientWidth;
+          var newHeight = element.scrollHeight + (hasHorizontalScrollbar ? scrollbarHeight : 0);
+
+          // Only update the height if it's different from the current height
+          if (obj.style.height !== `${newHeight}px`) {
+            obj.style.height = `${newHeight}px`;
+          }
+        }
+
+        // Resize the iframe to the height of the content and bottom scrollbar height
+        setHeight();
+
+        // Resize the iframe when the content changes
+        const resizeObserver = new ResizeObserver((entries) => {
+          setHeight();
+        });
+        resizeObserver.observe(obj.contentWindow.document.body);
+      }
+    </script>
+    <marimo-filename hidden>table_v.py</marimo-filename>
+    <!-- TODO(Trevor): Legacy, required by VS Code plugin. Remove when plugin is updated (see marimo/server/_templates/template.py) -->
+    <marimo-version data-version="{{ version }}" hidden></marimo-version>
+    <marimo-user-config data-config="{{ user_config }}" hidden></marimo-user-config>
+    <marimo-server-token data-token="{{ server_token }}" hidden></marimo-server-token>
+    <!-- /TODO -->
+    <title>table v</title>
+    <script type="module" crossorigin crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/index-CPVCa2dz.js"></script>
+    <link rel="stylesheet" crossorigin crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/index-BlxPam9h.css">
+  
+<script data-marimo="true">
+    window.__MARIMO_STATIC__ = {};
+    window.__MARIMO_STATIC__.files = {};
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <!-- This is a portal for the data editor to render in -->
+    <div id="portal" data-testid="glide-portal" style="position: fixed; left: 0; top: 0; z-index: 9999"></div>
+    <script data-marimo="true">
+      window.__MARIMO_MOUNT_CONFIG__ = {
+            "filename": "table_v.py",
+            "mode": "read",
+            "version": "0.14.17",
+            "serverToken": "static",
+            "config": {"completion": {"activate_on_typing": true, "copilot": false}, "display": {"cell_output": "below", "code_editor_font_size": 14, "dataframes": "rich", "default_table_max_columns": 50, "default_table_page_size": 10, "default_width": "medium", "reference_highlighting": true, "theme": "light"}, "formatting": {"line_length": 79}, "keymap": {"overrides": {}, "preset": "default"}, "language_servers": {"pylsp": {"enable_flake8": false, "enable_mypy": true, "enable_pydocstyle": false, "enable_pyflakes": false, "enable_pylint": false, "enable_ruff": true, "enabled": true}}, "package_management": {"manager": "pip"}, "runtime": {"auto_instantiate": true, "auto_reload": "off", "default_sql_output": "auto", "on_cell_change": "autorun", "output_max_bytes": 8000000, "reactive_tests": true, "std_stream_max_bytes": 1000000, "watcher_on_save": "lazy"}, "save": {"autosave": "after_delay", "autosave_delay": 1000, "format_on_save": false}, "server": {"browser": "default", "follow_symlink": false}, "snippets": {"custom_paths": [], "include_default_snippets": true}},
+            "configOverrides": {},
+            "appConfig": {"sql_output": "auto", "width": "compact"},
+            "view": {"showAppCode": true},
+            "notebook": {"cells": [{"code": "import marimo as mo\nimport numpy as np\nfrom ansitable import ANSITable, Column", "code_hash": "1adf7ed16c196922e829443e0a3b50dc", "config": {"column": null, "disabled": false, "hide_code": false}, "id": "Hbol", "name": "_"}, {"code": "mo.md(r\"\"\"# Table V\"\"\")", "code_hash": "2aa6eb5a1ddb3393873f7770a812f812", "config": {"column": null, "disabled": false, "hide_code": false}, "id": "MJUe", "name": "_"}, {"code": "rrt_p1 = np.load(\"data/use_case_b/rrt_perf_on_p1.npy\", allow_pickle=True)\nrrt_p2 = np.load(\"data/use_case_b/rrt_perf_on_p2.npy\", allow_pickle=True)\nrrt_ur5 = np.load(\"data/use_case_b/rrt_perf_on_ur5.npy\", allow_pickle=True)", "code_hash": "008d4c3c0a36d6d8a3ef80505a0ea5a6", "config": {"column": null, "disabled": false, "hide_code": false}, "id": "vblA", "name": "_"}, {"code": "p1_perf = rrt_p1[()]\np2_perf = rrt_p2[()]\nur5_perf = rrt_ur5[()]", "code_hash": "b77a51d8e8d5cb7a743d92935142f0ef", "config": {"column": null, "disabled": false, "hide_code": false}, "id": "bkHC", "name": "_"}, {"code": "rrt_table = ANSITable(\n    Column(\"Robot\"),\n    Column(\"Success Rate\"),\n    Column(\"Avg Time (s)\"),\n    Column(\"Avg Path Length\"),\n    Column(\"Avg Iterations\"),\n    Column(\"Avg Path Steps\"),\n    border=\"thin\",\n)\nrrt_table.row(\n    \"UR5\",\n    f\"{ur5_perf['success_rate'] * 100:.2f}%\",\n    f\"{ur5_perf['avg_time']:.4f}\",\n    f\"{ur5_perf['avg_path_length']:.4f}\",\n    f\"{ur5_perf['avg_iterations']:.2f}\",\n    f\"{ur5_perf['avg_path_steps']:.2f}\",\n)\nrrt_table.row(\n    \"P1\",\n    f\"{p1_perf['success_rate'] * 100:.2f}%\",\n    f\"{p1_perf['avg_time']:.4f}\",\n    f\"{p1_perf['avg_path_length']:.4f}\",\n    f\"{p1_perf['avg_iterations']:.2f}\",\n    f\"{p1_perf['avg_path_steps']:.2f}\",\n)\nrrt_table.row(\n    \"P2\",\n    f\"{p2_perf['success_rate'] * 100:.2f}%\",\n    f\"{p2_perf['avg_time']:.4f}\",\n    f\"{p2_perf['avg_path_length']:.4f}\",\n    f\"{p2_perf['avg_iterations']:.2f}\",\n    f\"{p2_perf['avg_path_steps']:.2f}\",\n)\nrrt_table.print()", "code_hash": "abe2c9877d12911e7dd2925c61212343", "config": {"column": null, "disabled": false, "hide_code": false}, "id": "lEQa", "name": "_"}], "metadata": {"marimo_version": "0.14.17"}, "version": "1"},
+            "session": {"cells": [{"code_hash": "1adf7ed16c196922e829443e0a3b50dc", "console": [], "id": "Hbol", "outputs": [{"data": {"text/plain": ""}, "type": "data"}]}, {"code_hash": "2aa6eb5a1ddb3393873f7770a812f812", "console": [], "id": "MJUe", "outputs": [{"data": {"text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"table-v\">Table V</h1></span>"}, "type": "data"}]}, {"code_hash": "008d4c3c0a36d6d8a3ef80505a0ea5a6", "console": [], "id": "vblA", "outputs": [{"data": {"text/plain": ""}, "type": "data"}]}, {"code_hash": "b77a51d8e8d5cb7a743d92935142f0ef", "console": [], "id": "bkHC", "outputs": [{"data": {"text/plain": ""}, "type": "data"}]}, {"code_hash": "abe2c9877d12911e7dd2925c61212343", "console": [{"name": "stdout", "text": "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Robot \u2502 Success Rate \u2502 Avg Time (s) \u2502 Avg Path Length \u2502 Avg Iterations \u2502 Avg Path Steps \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502   UR5 \u2502        6.50% \u2502       0.6508 \u2502          6.1730 \u2502         827.98 \u2502          63.02 \u2502\n\u2502    P1 \u2502       28.90% \u2502       0.8181 \u2502          8.3884 \u2502         788.63 \u2502          85.09 \u2502\n\u2502    P2 \u2502       33.20% \u2502       1.7054 \u2502          8.4245 \u2502         781.51 \u2502          85.48 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n", "type": "stream"}], "id": "lEQa", "outputs": [{"data": {"text/plain": ""}, "type": "data"}]}], "metadata": {"marimo_version": "0.14.17"}, "version": "1"},
+            "runtimeConfig": null,
+        };
+    </script>
+  
+<marimo-code hidden="">
+    import%20marimo%0A%0A__generated_with%20%3D%20%220.14.17%22%0Aapp%20%3D%20marimo.App()%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20import%20marimo%20as%20mo%0A%20%20%20%20import%20numpy%20as%20np%0A%20%20%20%20from%20ansitable%20import%20ANSITable%2C%20Column%0A%20%20%20%20return%20ANSITable%2C%20Column%2C%20mo%2C%20np%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(r%22%22%22%23%20Table%20V%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(np)%3A%0A%20%20%20%20rrt_p1%20%3D%20np.load(%22data%2Fuse_case_b%2Frrt_perf_on_p1.npy%22%2C%20allow_pickle%3DTrue)%0A%20%20%20%20rrt_p2%20%3D%20np.load(%22data%2Fuse_case_b%2Frrt_perf_on_p2.npy%22%2C%20allow_pickle%3DTrue)%0A%20%20%20%20rrt_ur5%20%3D%20np.load(%22data%2Fuse_case_b%2Frrt_perf_on_ur5.npy%22%2C%20allow_pickle%3DTrue)%0A%20%20%20%20return%20rrt_p1%2C%20rrt_p2%2C%20rrt_ur5%0A%0A%0A%40app.cell%0Adef%20_(rrt_p1%2C%20rrt_p2%2C%20rrt_ur5)%3A%0A%20%20%20%20p1_perf%20%3D%20rrt_p1%5B()%5D%0A%20%20%20%20p2_perf%20%3D%20rrt_p2%5B()%5D%0A%20%20%20%20ur5_perf%20%3D%20rrt_ur5%5B()%5D%0A%20%20%20%20return%20p1_perf%2C%20p2_perf%2C%20ur5_perf%0A%0A%0A%40app.cell%0Adef%20_(ANSITable%2C%20Column%2C%20p1_perf%2C%20p2_perf%2C%20ur5_perf)%3A%0A%20%20%20%20rrt_table%20%3D%20ANSITable(%0A%20%20%20%20%20%20%20%20Column(%22Robot%22)%2C%0A%20%20%20%20%20%20%20%20Column(%22Success%20Rate%22)%2C%0A%20%20%20%20%20%20%20%20Column(%22Avg%20Time%20(s)%22)%2C%0A%20%20%20%20%20%20%20%20Column(%22Avg%20Path%20Length%22)%2C%0A%20%20%20%20%20%20%20%20Column(%22Avg%20Iterations%22)%2C%0A%20%20%20%20%20%20%20%20Column(%22Avg%20Path%20Steps%22)%2C%0A%20%20%20%20%20%20%20%20border%3D%22thin%22%2C%0A%20%20%20%20)%0A%20%20%20%20rrt_table.row(%0A%20%20%20%20%20%20%20%20%22UR5%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bur5_perf%5B'success_rate'%5D%20*%20100%3A.2f%7D%25%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bur5_perf%5B'avg_time'%5D%3A.4f%7D%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bur5_perf%5B'avg_path_length'%5D%3A.4f%7D%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bur5_perf%5B'avg_iterations'%5D%3A.2f%7D%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bur5_perf%5B'avg_path_steps'%5D%3A.2f%7D%22%2C%0A%20%20%20%20)%0A%20%20%20%20rrt_table.row(%0A%20%20%20%20%20%20%20%20%22P1%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bp1_perf%5B'success_rate'%5D%20*%20100%3A.2f%7D%25%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bp1_perf%5B'avg_time'%5D%3A.4f%7D%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bp1_perf%5B'avg_path_length'%5D%3A.4f%7D%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bp1_perf%5B'avg_iterations'%5D%3A.2f%7D%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bp1_perf%5B'avg_path_steps'%5D%3A.2f%7D%22%2C%0A%20%20%20%20)%0A%20%20%20%20rrt_table.row(%0A%20%20%20%20%20%20%20%20%22P2%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bp2_perf%5B'success_rate'%5D%20*%20100%3A.2f%7D%25%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bp2_perf%5B'avg_time'%5D%3A.4f%7D%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bp2_perf%5B'avg_path_length'%5D%3A.4f%7D%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bp2_perf%5B'avg_iterations'%5D%3A.2f%7D%22%2C%0A%20%20%20%20%20%20%20%20f%22%7Bp2_perf%5B'avg_path_steps'%5D%3A.2f%7D%22%2C%0A%20%20%20%20)%0A%20%20%20%20rrt_table.print()%0A%20%20%20%20return%0A%0A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20app.run()%0A
+</marimo-code>
+
+<marimo-code-hash hidden="">6b161d8ca81b2fc0ccd8bec0f2eb0af1097b1d736ce2192352481badffa838c8</marimo-code-hash>
+</body>
+</html>

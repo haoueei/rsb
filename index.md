@@ -1,12 +1,25 @@
 ---
 layout: default
-title: "匿名补充材料"
+title: "RoboSandbox for Manipulator Design and Analysis"
 ---
 
-# Algorithm Demo
+# RoboSandbox: An Open-Source Python Framework for Manipulator Design and Analysis
 
-1. 介绍
-2. 更多细节请见 PDF
-3. 交互式演示：<链接到你的动画/GIF>
+## Supplementary Materials (Anonymous)
 
-<!-- 不要留下任何作者、学校、邮箱等可识别信息 -->
+### Use Case B
+
+1. [Optimization of P1](docs/optimization_p1.html)
+Code-enriched literature of optimization problem P1:
+$$
+\text{(P1)}\quad & \min_{\mathbf{a}, \mathbf{d}}\quad f_{1}(\mathbf{a}, \mathbf{d}; \boldsymbol{\alpha^0}) = \delta
+$$
+2. [Optimization of P2](docs/optimization_p2.html)
+Code-enriched literature of optimization problem P1:
+$$
+\text{(P2)}\quad & \min_{\mathbf{a}, \mathbf{d}}\quad f_{2}(\mathbf{a}, \mathbf{d}; \boldsymbol{\alpha^0}) = \delta - G_{n}
+$$
+3. [Table IV](docs/table_iv.html)
+python script to generate Table IV in the paper.
+4. [Table V](docs/table_v.html)
+python script to generate Table V in the paper.
