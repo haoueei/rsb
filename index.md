@@ -31,8 +31,23 @@ $$
 \min_{\mathbf{a}, \mathbf{d}}\quad f_{2}(\mathbf{a}, \mathbf{d}; \boldsymbol{\alpha^0}) = \delta - G_{n}
 $$
 
-- [Table IV](docs/table_iv.html)
+- [P1 RRT](docs/example_rrt_p1.html)
+
+Example of robot P1 reaching a target using RRT.
+
+![RRT P1](images/rrt_p1.mp4)
+
+- [P2 RRT](docs/example_rrt_p2.html)
+Example of robot P2 reaching a target using RRT.
+![RRT P2](images/rrt_p2.mp4)
+
+- [UR5 RRT](docs/example_rrt_ur5.html)
+Example of UR5 reaching a target using RRT.
+![RRT UR5](images/rrt_ur5.mp4)
+
+
+- [Compare $G_n$ and $\delta$](docs/table_iv.html)
 Python script to generate Table IV in the paper.
 
-- [Table V](docs/table_v.html)
+- [Compare RRT Performance](docs/table_v.html)
 Python script to generate Table V in the paper.

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/favicon.ico" />
+    <!-- Preload is necessary because we show these images when we disconnect from the server,
+    but at that point we cannot load these images from the server -->
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/gradient-yHQUC_QB.png" as="image" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/noise-60BoTA8O.png" as="image" />
+    <!-- Preload the fonts -->
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/Lora-VariableFont_wght-B2ootaw-.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/PTSans-Regular-CxL0S8W7.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/PTSans-Bold-D9fedIX3.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/FiraMono-Regular-BTCkDNvf.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/FiraMono-Medium-DU3aDxX5.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/FiraMono-Bold-CLVRCuM9.ttf" as="font" crossorigin="anonymous" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="a marimo app" />
+    <link rel="apple-touch-icon" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/apple-touch-icon.png" />
+    <link rel="manifest" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/manifest.json" />
+
+    <script data-marimo="true">
+      function __resizeIframe(obj) {
+        var scrollbarHeight = 20; // Max between windows, mac, and linux
+
+        function setHeight() {
+          var element = obj.contentWindow.document.documentElement;
+          // If there is no vertical scrollbar, we don't need to resize the iframe
+          if (element.scrollHeight === element.clientHeight) {
+            return;
+          }
+
+          // Create a new height that includes the scrollbar height if it's visible
+          var hasHorizontalScrollbar = element.scrollWidth > element.clientWidth;
+          var newHeight = element.scrollHeight + (hasHorizontalScrollbar ? scrollbarHeight : 0);
+
+          // Only update the height if it's different from the current height
+          if (obj.style.height !== `${newHeight}px`) {
+            obj.style.height = `${newHeight}px`;
+          }
+        }
+
+        // Resize the iframe to the height of the content and bottom scrollbar height
+        setHeight();
+
+        // Resize the iframe when the content changes
+        const resizeObserver = new ResizeObserver((entries) => {
+          setHeight();
+        });
+        resizeObserver.observe(obj.contentWindow.document.body);
+      }
+    </script>
+    <marimo-filename hidden>example_rrt_p1.py</marimo-filename>
+    <!-- TODO(Trevor): Legacy, required by VS Code plugin. Remove when plugin is updated (see marimo/server/_templates/template.py) -->
+    <marimo-version data-version="{{ version }}" hidden></marimo-version>
+    <marimo-user-config data-config="{{ user_config }}" hidden></marimo-user-config>
+    <marimo-server-token data-token="{{ server_token }}" hidden></marimo-server-token>
+    <!-- /TODO -->
+    <title>example rrt p1</title>
+    <script type="module" crossorigin crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/index-CPVCa2dz.js"></script>
+    <link rel="stylesheet" crossorigin crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/index-BlxPam9h.css">
+  
+<script data-marimo="true">
+    window.__MARIMO_STATIC__ = {};
+    window.__MARIMO_STATIC__.files = {};
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <!-- This is a portal for the data editor to render in -->
+    <div id="portal" data-testid="glide-portal" style="position: fixed; left: 0; top: 0; z-index: 9999"></div>
+    <script data-marimo="true">
+      window.__MARIMO_MOUNT_CONFIG__ = {
+            "filename": "example_rrt_p1.py",
+            "mode": "read",
+            "version": "0.14.17",
+            "serverToken": "static",
+            "config": {"completion": {"activate_on_typing": true, "copilot": false}, "display": {"cell_output": "below", "code_editor_font_size": 14, "dataframes": "rich", "default_table_max_columns": 50, "default_table_page_size": 10, "default_width": "medium", "reference_highlighting": true, "theme": "light"}, "formatting": {"line_length": 79}, "keymap": {"overrides": {}, "preset": "default"}, "language_servers": {"pylsp": {"enable_flake8": false, "enable_mypy": true, "enable_pydocstyle": false, "enable_pyflakes": false, "enable_pylint": false, "enable_ruff": true, "enabled": true}}, "package_management": {"manager": "pip"}, "runtime": {"auto_instantiate": true, "auto_reload": "off", "default_sql_output": "auto", "on_cell_change": "autorun", "output_max_bytes": 8000000, "reactive_tests": true, "std_stream_max_bytes": 1000000, "watcher_on_save": "lazy"}, "save": {"autosave": "after_delay", "autosave_delay": 1000, "format_on_save": false}, "server": {"browser": "default", "follow_symlink": false}, "snippets": {"custom_paths": [], "include_default_snippets": true}},
+            "configOverrides": {},
+            "appConfig": {"sql_output": "auto", "width": "medium"},
+            "view": {"showAppCode": true},
+            "notebook": {"cells": [{"code": "mo.md(\n    r\"\"\"\n# An RRT Example of Robot P1\nAn example demonstrates the use of the RRT algorithm to find a path for a 6-DOF robot in a simulated environment with obstacles.\n\"\"\"\n)", "code_hash": "e0a9cf3d5321f4b21d22466615d37006", "config": {"column": null, "disabled": false, "hide_code": false}, "id": "Hbol", "name": "_"}, {"code": "import marimo as mo\nfrom rrt import RRT\nfrom robosandbox.models.URDF.Generic import GenericDH\nfrom pathlib import Path\nimport numpy as np\nimport swift\nimport spatialgeometry as sg\nfrom spatialmath import SE3", "code_hash": "521b35f527f60fe91e8bf208164a1fd9", "config": {"column": null, "disabled": false, "hide_code": false}, "id": "MJUe", "name": "_"}, {"code": "mo.md(r\"\"\"## Define P1\"\"\")", "code_hash": "4335669243b560fca446b3c12e9299dc", "config": {"column": null, "disabled": false, "hide_code": false}, "id": "vblA", "name": "_"}, {"code": "def create_p1():\n    \"\"\"Create and return a 6-DOF robot.\"\"\"\n    design_params = np.load(\"data/use_case_b/best_x_for_p1.npy\")\n    d0, a1, a2, d3, d4, d5 = design_params\n    d = [d0, 0, 0, d3, d4, d5]  # d1, d2 are 0\n    a = [0, a1, a2, 0, 0, 0]  # a0, a3, a4, a5 are 0\n    alpha = [np.pi / 2, 0, 0, np.pi / 2, -np.pi / 2, 0]  # from UR5\n    link_radius = [\n        0.02,\n        0.02,\n        0.02,\n        0.02,\n        0.02,\n        0.02,\n    ]  # all links have same radius\n    actuator_radius = [0.02, 0.02, 0.020, 0.020, 0.022, 0.02]\n    actuator_length = [0.02, 0.06, 0.06, 0.06, 0.02, 0.04]\n    return GenericDH(\n        dofs=6,\n        a=a,\n        alpha=alpha,\n        d=d,\n        link_radius=link_radius,\n        actuator_radius=actuator_radius,\n        actuator_length=actuator_length,\n    )", "code_hash": "fa78d618c6096832797693477772211c", "config": {"column": null, "disabled": false, "hide_code": false}, "id": "bkHC", "name": "_"}, {"code": "def set_env(env):\n    obstacle1 = sg.Cuboid([1, 0.05, 1], pose=SE3(0, -0.5, 0.5))\n    env.add(obstacle1)\n    obstacle2 = sg.Cuboid([1, 0.05, 1], pose=SE3(0, 0.5, 0.5))\n    env.add(obstacle2)\n    obstacle3 = sg.Cuboid(\n        [1, 0.05, 1], pose=SE3(0.5, 0, 0.5) * SE3.Rz(np.pi / 2)\n    )\n    env.add(obstacle3)\n    obstacle4 = sg.Cuboid(\n        [1, 0.05, 1], pose=SE3(-0.5, 0, 0.5) * SE3.Rz(np.pi / 2)\n    )\n    env.add(obstacle4)\n\n    list = [obstacle1, obstacle2, obstacle3, obstacle4]\n    return env, list", "code_hash": "cadd75b0b9aabfb91a294c1757dc148e", "config": {"column": null, "disabled": false, "hide_code": false}, "id": "lEQa", "name": "_"}, {"code": "np.random.seed(42)  # for reproducibility\nrobot = create_p1()\n\nenv = swift.Swift()\nenv.launch(realtime=True, browser=\"notebook\")\nenv.set_camera_pose(position=[-0.3, -0.3, 2.2], look_at=[0, 0, 0.2])\nrobot.q = np.array(\n    [0, -np.pi / 2, 0, np.pi / 2, np.pi / 2, 0]\n)  # set initial pose\n\nenv.add(robot)\nenv, list = set_env(env)\nax_goal = sg.Axes(0.1)\ngoal = SE3(\n    -0.25,\n    -0.25,\n    0.35,\n) * SE3.Rz(np.pi / 2)\nax_goal.T = goal.A\nenv.add(ax_goal)\n\n# setup rrt\nrrt = RRT(\n    robot,\n    obstacle_list=list,\n    joint_limits=[(-np.pi, np.pi)] * 6,\n)\nq_start = robot.q\nnp.random.seed(42)\nrrt.find_path(start_config=q_start, goal=goal.A, goal_is_pose=True)\nrrt.print_results()\n\nif rrt.path:\n    for config in rrt.path:\n        robot.q = config\n        env.step(0.1)  # Step the simulator\nelse:\n    print(\"No path found, cannot simulate.\")", "code_hash": "824c7b9d3730cc03ca5efa8402f7f988", "config": {"column": null, "disabled": false, "hide_code": false}, "id": "PKri", "name": "_"}], "metadata": {"marimo_version": "0.14.17"}, "version": "1"},
+            "session": {"cells": [{"code_hash": "e0a9cf3d5321f4b21d22466615d37006", "console": [], "id": "Hbol", "outputs": [{"data": {"text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"an-rrt-example-of-robot-p1\">An RRT Example of Robot P1</h1>\n<span class=\"paragraph\">An example demonstrates the use of the RRT algorithm to find a path for a 6-DOF robot in a simulated environment with obstacles.</span></span>"}, "type": "data"}]}, {"code_hash": "521b35f527f60fe91e8bf208164a1fd9", "console": [], "id": "MJUe", "outputs": [{"data": {"text/plain": ""}, "type": "data"}]}, {"code_hash": "4335669243b560fca446b3c12e9299dc", "console": [], "id": "vblA", "outputs": [{"data": {"text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"define-p1\">Define P1</h2></span>"}, "type": "data"}]}, {"code_hash": "fa78d618c6096832797693477772211c", "console": [], "id": "bkHC", "outputs": [{"data": {"text/plain": ""}, "type": "data"}]}, {"code_hash": "cadd75b0b9aabfb91a294c1757dc148e", "console": [], "id": "lEQa", "outputs": [{"data": {"text/plain": ""}, "type": "data"}]}, {"code_hash": "824c7b9d3730cc03ca5efa8402f7f988", "console": [{"name": "stdout", "text": "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502      Result \u2502  Value \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502  Path found \u2502   True \u2502\n\u2502  Path steps \u2502     53 \u2502\n\u2502 Path length \u2502 5.2000 \u2502\n\u2502  Iterations \u2502    838 \u2502\n\u2502   Tree size \u2502    771 \u2502\n\u2502    Time (s) \u2502 0.9933 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n", "type": "stream"}], "id": "PKri", "outputs": [{"data": {"text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'>\n        <iframe\n            width=\"600\"\n            height=\"400\"\n            src=\"http://localhost:52018/?53018\"\n            frameborder=\"0\"\n            allowfullscreen\n            \n        ></iframe>\n        </div>"}, "type": "data"}]}], "metadata": {"marimo_version": "0.14.17"}, "version": "1"},
+            "runtimeConfig": null,
+        };
+    </script>
+  
+<marimo-code hidden="">
+    import%20marimo%0A%0A__generated_with%20%3D%20%220.14.17%22%0Aapp%20%3D%20marimo.App(width%3D%22medium%22)%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20r%22%22%22%0A%20%20%20%20%23%20An%20RRT%20Example%20of%20Robot%20P1%0A%20%20%20%20An%20example%20demonstrates%20the%20use%20of%20the%20RRT%20algorithm%20to%20find%20a%20path%20for%20a%206-DOF%20robot%20in%20a%20simulated%20environment%20with%20obstacles.%0A%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20import%20marimo%20as%20mo%0A%20%20%20%20from%20rrt%20import%20RRT%0A%20%20%20%20from%20robosandbox.models.URDF.Generic%20import%20GenericDH%0A%20%20%20%20from%20pathlib%20import%20Path%0A%20%20%20%20import%20numpy%20as%20np%0A%20%20%20%20import%20swift%0A%20%20%20%20import%20spatialgeometry%20as%20sg%0A%20%20%20%20from%20spatialmath%20import%20SE3%0A%20%20%20%20return%20GenericDH%2C%20RRT%2C%20SE3%2C%20mo%2C%20np%2C%20sg%2C%20swift%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(r%22%22%22%23%23%20Define%20P1%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(GenericDH%2C%20np)%3A%0A%20%20%20%20def%20create_p1()%3A%0A%20%20%20%20%20%20%20%20%22%22%22Create%20and%20return%20a%206-DOF%20robot.%22%22%22%0A%20%20%20%20%20%20%20%20design_params%20%3D%20np.load(%22data%2Fuse_case_b%2Fbest_x_for_p1.npy%22)%0A%20%20%20%20%20%20%20%20d0%2C%20a1%2C%20a2%2C%20d3%2C%20d4%2C%20d5%20%3D%20design_params%0A%20%20%20%20%20%20%20%20d%20%3D%20%5Bd0%2C%200%2C%200%2C%20d3%2C%20d4%2C%20d5%5D%20%20%23%20d1%2C%20d2%20are%200%0A%20%20%20%20%20%20%20%20a%20%3D%20%5B0%2C%20a1%2C%20a2%2C%200%2C%200%2C%200%5D%20%20%23%20a0%2C%20a3%2C%20a4%2C%20a5%20are%200%0A%20%20%20%20%20%20%20%20alpha%20%3D%20%5Bnp.pi%20%2F%202%2C%200%2C%200%2C%20np.pi%20%2F%202%2C%20-np.pi%20%2F%202%2C%200%5D%20%20%23%20from%20UR5%0A%20%20%20%20%20%20%20%20link_radius%20%3D%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%200.02%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.02%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.02%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.02%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.02%2C%0A%20%20%20%20%20%20%20%20%20%20%20%200.02%2C%0A%20%20%20%20%20%20%20%20%5D%20%20%23%20all%20links%20have%20same%20radius%0A%20%20%20%20%20%20%20%20actuator_radius%20%3D%20%5B0.02%2C%200.02%2C%200.020%2C%200.020%2C%200.022%2C%200.02%5D%0A%20%20%20%20%20%20%20%20actuator_length%20%3D%20%5B0.02%2C%200.06%2C%200.06%2C%200.06%2C%200.02%2C%200.04%5D%0A%20%20%20%20%20%20%20%20return%20GenericDH(%0A%20%20%20%20%20%20%20%20%20%20%20%20dofs%3D6%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20a%3Da%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20alpha%3Dalpha%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20d%3Dd%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20link_radius%3Dlink_radius%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20actuator_radius%3Dactuator_radius%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20actuator_length%3Dactuator_length%2C%0A%20%20%20%20%20%20%20%20)%0A%20%20%20%20return%20(create_p1%2C)%0A%0A%0A%40app.cell%0Adef%20_(SE3%2C%20np%2C%20sg)%3A%0A%20%20%20%20def%20set_env(env)%3A%0A%20%20%20%20%20%20%20%20obstacle1%20%3D%20sg.Cuboid(%5B1%2C%200.05%2C%201%5D%2C%20pose%3DSE3(0%2C%20-0.5%2C%200.5))%0A%20%20%20%20%20%20%20%20env.add(obstacle1)%0A%20%20%20%20%20%20%20%20obstacle2%20%3D%20sg.Cuboid(%5B1%2C%200.05%2C%201%5D%2C%20pose%3DSE3(0%2C%200.5%2C%200.5))%0A%20%20%20%20%20%20%20%20env.add(obstacle2)%0A%20%20%20%20%20%20%20%20obstacle3%20%3D%20sg.Cuboid(%0A%20%20%20%20%20%20%20%20%20%20%20%20%5B1%2C%200.05%2C%201%5D%2C%20pose%3DSE3(0.5%2C%200%2C%200.5)%20*%20SE3.Rz(np.pi%20%2F%202)%0A%20%20%20%20%20%20%20%20)%0A%20%20%20%20%20%20%20%20env.add(obstacle3)%0A%20%20%20%20%20%20%20%20obstacle4%20%3D%20sg.Cuboid(%0A%20%20%20%20%20%20%20%20%20%20%20%20%5B1%2C%200.05%2C%201%5D%2C%20pose%3DSE3(-0.5%2C%200%2C%200.5)%20*%20SE3.Rz(np.pi%20%2F%202)%0A%20%20%20%20%20%20%20%20)%0A%20%20%20%20%20%20%20%20env.add(obstacle4)%0A%0A%20%20%20%20%20%20%20%20list%20%3D%20%5Bobstacle1%2C%20obstacle2%2C%20obstacle3%2C%20obstacle4%5D%0A%20%20%20%20%20%20%20%20return%20env%2C%20list%0A%20%20%20%20return%20(set_env%2C)%0A%0A%0A%40app.cell%0Adef%20_(RRT%2C%20SE3%2C%20create_p1%2C%20np%2C%20set_env%2C%20sg%2C%20swift)%3A%0A%20%20%20%20np.random.seed(42)%20%20%23%20for%20reproducibility%0A%20%20%20%20robot%20%3D%20create_p1()%0A%0A%20%20%20%20env%20%3D%20swift.Swift()%0A%20%20%20%20env.launch(realtime%3DTrue%2C%20browser%3D%22notebook%22)%0A%20%20%20%20env.set_camera_pose(position%3D%5B-0.3%2C%20-0.3%2C%202.2%5D%2C%20look_at%3D%5B0%2C%200%2C%200.2%5D)%0A%20%20%20%20robot.q%20%3D%20np.array(%0A%20%20%20%20%20%20%20%20%5B0%2C%20-np.pi%20%2F%202%2C%200%2C%20np.pi%20%2F%202%2C%20np.pi%20%2F%202%2C%200%5D%0A%20%20%20%20)%20%20%23%20set%20initial%20pose%0A%0A%20%20%20%20env.add(robot)%0A%20%20%20%20env%2C%20list%20%3D%20set_env(env)%0A%20%20%20%20ax_goal%20%3D%20sg.Axes(0.1)%0A%20%20%20%20goal%20%3D%20SE3(%0A%20%20%20%20%20%20%20%20-0.25%2C%0A%20%20%20%20%20%20%20%20-0.25%2C%0A%20%20%20%20%20%20%20%200.35%2C%0A%20%20%20%20)%20*%20SE3.Rz(np.pi%20%2F%202)%0A%20%20%20%20ax_goal.T%20%3D%20goal.A%0A%20%20%20%20env.add(ax_goal)%0A%0A%20%20%20%20%23%20setup%20rrt%0A%20%20%20%20rrt%20%3D%20RRT(%0A%20%20%20%20%20%20%20%20robot%2C%0A%20%20%20%20%20%20%20%20obstacle_list%3Dlist%2C%0A%20%20%20%20%20%20%20%20joint_limits%3D%5B(-np.pi%2C%20np.pi)%5D%20*%206%2C%0A%20%20%20%20)%0A%20%20%20%20q_start%20%3D%20robot.q%0A%20%20%20%20np.random.seed(42)%0A%20%20%20%20rrt.find_path(start_config%3Dq_start%2C%20goal%3Dgoal.A%2C%20goal_is_pose%3DTrue)%0A%20%20%20%20rrt.print_results()%0A%0A%20%20%20%20if%20rrt.path%3A%0A%20%20%20%20%20%20%20%20for%20config%20in%20rrt.path%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20robot.q%20%3D%20config%0A%20%20%20%20%20%20%20%20%20%20%20%20env.step(0.1)%20%20%23%20Step%20the%20simulator%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print(%22No%20path%20found%2C%20cannot%20simulate.%22)%0A%20%20%20%20return%0A%0A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20app.run()%0A
+</marimo-code>
+
+<marimo-code-hash hidden="">eadd2a8b8f5d55defdb241656da3140c11ebfbe71c07057a99a669bf562435e4</marimo-code-hash>
+</body>
+</html>
