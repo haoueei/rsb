@@ -13,6 +13,12 @@ description: "An Open-Source Python Framework for Manipulator Design and Analysi
 
 ## Supplementary Materials (Anonymous)
 
+### Use Case A
+
+- [Code of Use Case A](docs/use_case_A.html)
+
+- [Part of Plotted Robots](docs/plot_robots.html)
+
 ### Use Case B
 
 - [Optimization of P1](docs/optimization_p1.html)
