@@ -11,14 +11,53 @@ description: "An Open-Source Python Framework for Manipulator Design and Analysi
 
 ![Cover Image](images/callout.svg)
 
-## Supplementary Materials (Anonymous)
+# Supplementary Materials (Anonymous)
 
+This website contains the code and supplementary materials for the RA-L paper.
+
+## Contents
+
+- [Installation](#1)
+- [Code](#2)
+  - [Code of Use Case A](#3)
+  - [Code of Use Case B](#4)
+
+<a id="1"></a>
+## Installation
+
+> This section provides instructions on how to install RoboSandbox and verify the installation.
+
+
+It is recommended to use a virtual environment. To set up a [conda](https://docs.conda.io/en/latest/) and [uv](https://docs.astral.sh/uv/getting-started/installation/) environment with RoboSandbox installed, you can use the following commands:
+
+```bash
+conda create -n rsb_env python=3.10
+conda activate rsb_env
+pip install uv
+uv pip install robosandbox
+```
+
+To verify the installation, we can launch the app from RoboSandbox:
+
+```bash
+python -c "import robosandbox as rsb; rsb.visualization.RobotArmDesignAppStandalone().run_app()"
+```
+
+<img src="docs/app.gif" width="800">
+
+<a id="2"></a>
+## Code
+
+> This section provides links to the code and showcases the results of the paper.
+
+<a id="3"></a>
 ### Use Case A
 
 - [Code of Use Case A](docs/use_case_A.html)
 
 - [Part of Plotted Robots](docs/plot_robots.html)
 
+<a id="4"></a>
 ### Use Case B
 
 - [Optimization of P1](docs/optimization_p1.html)
