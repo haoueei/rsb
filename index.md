@@ -13,12 +13,12 @@ description: "An Open-Source Python Framework for Manipulator Design and Analysi
 
 # Supplementary Materials (Anonymous)
 
-This website contains the code and supplementary materials for the RA-L paper.
+This website includes the code and supplementary materials related to the paper submission.
 
 ## Contents
 
 - [Installation](#1)
-- [Code](#2)
+- [Code and Key Results](#2)
   - [Code of Use Case A](#3)
   - [Code of Use Case B](#4)
 
@@ -46,7 +46,7 @@ python -c "import robosandbox as rsb; rsb.visualization.RobotArmDesignAppStandal
 <img src="docs/app.gif" width="800">
 
 <a id="2"></a>
-## Code
+## Code and Key Results
 
 > This section provides links to the code and showcases the results of the paper.
 
