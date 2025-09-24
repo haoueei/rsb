@@ -27,6 +27,11 @@ This website includes the code and supplementary materials related to the paper 
 
 > This section provides instructions on how to install RoboSandbox and verify the installation.
 
+You can install RoboSandbox using pip by running the following command:
+
+```bash
+pip install robosandbox
+```
 
 It is recommended to use a virtual environment. To set up a [conda](https://docs.conda.io/en/latest/) and [uv](https://docs.astral.sh/uv/getting-started/installation/) environment with RoboSandbox installed, you can use the following commands:
 
